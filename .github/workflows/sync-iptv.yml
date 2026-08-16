@@ -110,7 +110,7 @@ jobs:
             <p><strong>📅 更新时间：</strong> $(date -u '+%Y-%m-%d %H:%M:%S UTC')</p>
             <p><strong>🔗 源文件1（migu.m3u）：</strong> <a href="https://github.com/ioptu/migu_video/blob/main/migu.m3u">ioptu/migu_video/migu.m3u</a> (共 ${{ steps.download.outputs.source1_lines }} 行)</p>
             <p><strong>🔗 源文件2（cctv.migu.m3u）：</strong> <a href="https://github.com/ioptu/migu_video/blob/main/cctv.migu.m3u">ioptu/migu_video/cctv.migu.m3u</a> (共 ${{ steps.download.outputs.source2_lines }} 行，已自动添加 group-title="央视专版")</p>
-            <p><strong>📂 你的文件：</strong> <a href="https://github.com/jia070310/lemonTV/blob/main/iptv-fe.m3u">jia070310/lemonTV/iptv-fe.m3u</a></p>
+            <p><strong>📂 你的文件：</strong> <a href="https://github.com/willisfeng/lemonTV/blob/main/iptv-fe.m3u">willisfeng/lemonTV/iptv-fe.m3u</a></p>
           </div>
           <div style="background-color: #f9f9f9; padding: 15px; margin-top: 15px;">
             <h3>📊 文件信息</h3>
