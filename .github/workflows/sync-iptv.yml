@@ -30,8 +30,8 @@ jobs:
       id: download
       run: |
         # 下载两个源文件
-        curl -s -L -o migu.m3u "https://raw.githubusercontent.com/ioptu/migu_video/main/migu.m3u"
-        curl -s -L -o cctv_raw.m3u "https://raw.githubusercontent.com/ioptu/migu_video/main/cctv.migu.m3u"
+        curl -s -L -o migu.m3u "https://raw.githubusercontent.com/willisfeng/migu_video1/main/migu.m3u"
+        curl -s -L -o cctv_raw.m3u "https://raw.githubusercontent.com/willisfeng/migu_video1/main/cctv.migu.m3u"
         
         # 修正 cctv 文件：在每个 #EXTINF 行的 tvg-logo="..." 后面插入 ,group-title="央视专版",
         # 原始格式：#EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="..."CCTV1
