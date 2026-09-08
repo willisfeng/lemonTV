@@ -91,33 +91,7 @@ jobs:
         源文件2: cctv.migu.m3u (已自动添加 group-title=\"央视专版\")
         合并后哈希: ${{ steps.download.outputs.new_hash }}"
         git push origin main
-    
-    - name: Send email notification
-      if: steps.compare.outputs.changed == 'true'
-      uses: dawidd6/action-send-mail@v16
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USER }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "✅ IPTV文件已自动更新 - $(date -u '+%Y-%m-%d %H:%M') UTC"
-        to: ${{ secrets.NOTIFY_EMAIL }}
-        from: GitHub Actions <actions@github.com>
-        html_body: |
-          <h2>📡 IPTV文件自动同步完成</h2>
-          <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px;">
-            <p><strong>🔄 同步状态：</strong> <span style="color: green;">✅ 成功更新</span></p>
-            <p><strong>📅 更新时间：</strong> $(date -u '+%Y-%m-%d %H:%M:%S UTC')</p>
-            <p><strong>🔗 源文件1（migu.m3u）：</strong> <a href="https://github.com/ioptu/migu_video/blob/main/migu.m3u">ioptu/migu_video/migu.m3u</a> (共 ${{ steps.download.outputs.source1_lines }} 行)</p>
-            <p><strong>🔗 源文件2（cctv.migu.m3u）：</strong> <a href="https://github.com/ioptu/migu_video/blob/main/cctv.migu.m3u">ioptu/migu_video/cctv.migu.m3u</a> (共 ${{ steps.download.outputs.source2_lines }} 行，已自动添加 group-title="央视专版")</p>
-            <p><strong>📂 你的文件：</strong> <a href="https://github.com/willisfeng/lemonTV/blob/main/iptv-fe.m3u">willisfeng/lemonTV/iptv-fe.m3u</a></p>
-          </div>
-          <div style="background-color: #f9f9f9; padding: 15px; margin-top: 15px;">
-            <h3>📊 文件信息</h3>
-            <p><strong>新哈希：</strong> <code>${{ steps.download.outputs.new_hash }}</code></p>
-            <p><strong>旧哈希：</strong> <code>${{ steps.hash_check.outputs.old_hash }}</code></p>
-          </div>
-          <p><small>此邮件由 GitHub Actions 自动发送</small></p>
+   
     
     - name: Log no changes
       if: steps.compare.outputs.changed == 'false'
